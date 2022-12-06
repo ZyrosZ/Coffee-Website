@@ -1,18 +1,4 @@
 
-var menuItem = document.getElementById("menuNav");
-
-
-function menutoggle(){
-if(menuItem.style.maxHeight == "0px")
-    {
-        menuItem.style.maxHeight = "200px";
-    }
-else
-    {
-        menuItem.style.maxHeight = "0px";
-    }
-}
-
 let carts = document.querySelectorAll('.add-cart');
 
 let items = [  /*array of items*/
@@ -65,7 +51,7 @@ for(let i=0; i<carts.length; i++)
 
 function onLoadCartNumber() //to keep the number of item in cart even refreshing the page
 {
-    var itemNumbers = localStorage.getItem('cartNumbers'); //check if there is any item in cart
+    let itemNumbers = localStorage.getItem('cartNumbers'); //check if there is any item in cart
 
     if (itemNumbers){
         document.querySelector('.cart-icon span').textContent = itemNumbers;

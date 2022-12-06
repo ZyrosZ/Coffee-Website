@@ -25,8 +25,8 @@
             
         </nav>
 
-        <a href="Coffee_Shop_Cart.html">
-            <img src="cart.jpg" width="40px" height="40px">
+        <a class = "cart-icon" href="Coffee_Shop_Cart.html">
+            <img src="cart.jpg" width="40px" height="40px"><span>0</span>
         </a>
         
         <img class ="menuIcon" src="menu.jpg" width="40px" height="40px"
@@ -43,7 +43,7 @@
                              a mild stimulant to the <br>central nervous system that 
                              quickly boosts our alertness and energy levels
                         </p>
-                        <a href ="" class="butn">Order Now &#10137;</a>
+                        <a href ="Coffee_Shop_Menu.html" class="butn">Order Now &#10137;</a>
                     </div>
         
                     <div class="col-2">
@@ -144,9 +144,24 @@
 </div>
 
 <!-----------------JS for MenuNav(put int seperate file later)------------>    
+<script>
+    var menuItem = document.getElementById("menuNav");
+menuItem.style.maxHeight="0px";
 
+function menutoggle(){
+if(menuItem.style.maxHeight == "0px")
+{
+    menuItem.style.maxHeight = "200px";
+}
+else
+{
+    menuItem.style.maxHeight = "0px";
+}
+}
+</script>
 
 <script src="Cart.js"></script>
+
 </body>
 
 </html>
