@@ -1,4 +1,18 @@
 
+var menuItem = document.getElementById("menuNav");
+
+
+function menutoggle(){
+if(menuItem.style.maxHeight == "0px")
+    {
+        menuItem.style.maxHeight = "200px";
+    }
+else
+    {
+        menuItem.style.maxHeight = "0px";
+    }
+}
+
 let carts = document.querySelectorAll('.add-cart');
 
 let items = [  /*array of items*/
@@ -9,7 +23,7 @@ let items = [  /*array of items*/
         inCart: 0
     },
     {
-        name: 'Salted Caramel Macchiato',
+        name: 'Caramel Macchiato',
         tag: 'machiato',
         price: 5.50,
         inCart: 0
@@ -51,7 +65,7 @@ for(let i=0; i<carts.length; i++)
 
 function onLoadCartNumber() //to keep the number of item in cart even refreshing the page
 {
-    let itemNumbers = localStorage.getItem('cartNumbers'); //check if there is any item in cart
+    var itemNumbers = localStorage.getItem('cartNumbers'); //check if there is any item in cart
 
     if (itemNumbers){
         document.querySelector('.cart-icon span').textContent = itemNumbers;
@@ -102,45 +116,53 @@ function setItems(item){ //to add item name, price... to storage
 
 function total(item){
     let cartCost = localStorage.getItem('totalCost');
-
+    
     if(cartCost!=null)
     {
-        cartCost = parseInt(cartCost);
-    cartCost = localStorage.setItem("totalCost", cartCost + item.price);
+        cartCost = parseFloat(cartCost);
+        cartCost = localStorage.setItem("totalCost", cartCost + item.price);
     }
     else{
         localStorage.setItem("totalCost", item.price);
     }
 }
 
-function displayCart()
-{
+function displayCart(){
     let cartItems = localStorage.getItem("itemInCart");
+    let cartCost = localStorage.getItem('totalCost');
     cartItems = JSON.parse(cartItems);
-    let ItemContainer = document.querySelector(".item");
-
+    
+    let productContainer = document.querySelector(".items-display")
     console.log(cartItems);
-    if(cartItems && ItemContainer){
-        ItemContainer.innerHTML = '';
-        Object.values(cartItems).map(product =>{
-            ItemContainer.innerHTML +=`
-            <div class="item>
+
+    if(cartItems && productContainer){
+        productContainer.innerHTML = '';
+        Object.values(cartItems).map(item =>{
+            productContainer.innerHTML +=`
+            <div class ="product">
                 <ion-icon name="close-circle-outline"></ion-icon>
-                <ion-icon name="close-circle-outline"></ion-icon>
-                <img src="${product.tag}.jpg" width = "80px">
-                <span>${product.name}</span>
+                <img src = "${item.tag}.jpg">
+                <span>${item.name}</span>
             </div>
-            <div class ="price">${product.price}</div>
-            <div class = "quantity"
-                <ion-icon name="chevron-back-outline"></ion-icon>
-                <ion-icon name="chevron-back-outline"></ion-icon>
-                <span>${product.inCart}</span>
-                
+            <div class = "price">${item.price}</div>
+            <div class = "quantity">
+                <ion-icon class = "down" name="chevron-back-outline"></ion-icon>
+                <span>${item.inCart}</span>
+                <ion-icon class = "up" name="chevron-forward-outline"></ion-icon>
+            </div>
+            <div class = "total">
+                ${item.inCart * item.price}
             </div>
             `
         });
+
+        productContainer.innerHTML+= `
+        <div class = "basketTotalContainer">
+            <h4 class "basketTotalTitle"> Cart Total </h4>
+            <h4 class ="basketTotal">$${cartCost}</h4>
+        </div>
+        `
     }
 }
-
 onLoadCartNumber();
 displayCart();
