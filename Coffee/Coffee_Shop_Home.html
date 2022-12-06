@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>The Coffee Time Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class = "navigateBar">
+        <a href="Coffee_Shop_Home.html">
+            <img class = "logo" src="logo1.png" alt="The Coffee Time" width="160px"> 
+        </a>
+        
+        <!--The nav element defines a set of navigation links:-->
+        <nav>
+            <!--Unorderes list of links-->
+            <ul id="menuNav">
+                <li><a href="Coffee_Shop_Home.html">Home</a></li>
+                <li><a href="Coffee_Shop_Menu.html">Menu</a></li>
+                <li><a href="Coffee_Shop_Contact.html">Contact</a></li>
+                <li><a href="Coffee_Shop_Location.html">Location</a></li>
+            </ul>
+            
+        </nav>
+
+        <a href="Coffee_Shop_Cart.html">
+            <img src="cart.jpg" width="40px" height="40px">
+        </a>
+        
+        <img class ="menuIcon" src="menu.jpg" width="40px" height="40px"
+        onclick="menutoggle()">
+    </div>
+    <div class="header">
+        <div class ="container"> <!--to make box-->
+            <div class="first">  
+                <div class="row">
+                    <div class="col-2">
+                        <h1>Good Coffee for a<br> better Opening</h1>
+                        <p>Coffee is the most popular hot drink in the world.
+                             <br>It supplies us with a jolt of caffeine,
+                             a mild stimulant to the <br>central nervous system that 
+                             quickly boosts our alertness and energy levels
+                        </p>
+                        <a href ="" class="butn">Order Now &#10137;</a>
+                    </div>
+        
+                    <div class="col-2">
+                        <img src="front_coffee.jpg" alt="expresso">
+                    </div>
+                </div>            
+            </div>          
+        </div>
+    </div>
+
+<!---------------------------Part two-------------->    
+    <div class="coffeeCat">
+        <div class="smallContainer">
+            <div class="row">
+                <div class="col-3">
+                    <img src="ice_coffee.jpg" alt="Ice Cofee">
+                </div>
+                <div class="col-3">
+                    <img src="latte.jpg" alt="Latte">
+                </div>
+                <div class="col-3">
+                    <img src="expresso.jpg" alt="Expresso">
+                </div>
+            </div>
+        </div>  
+    </div>
+
+<!---------------------Part three: top seller + upcoming---------->    
+    <div class="smallContainer">
+        <h2 class = "title">Top Seller - Our Specials</h2>
+            <div class="row">
+                <div class="col-4">
+                    <img src="machiato.jpg" alt="Salted Caramel Macchiato">
+                    <h4>Salted Caramel Macchiato</h4>
+                    <p>$5.50</p>
+                </div>
+                <div class="col-4">
+                    <img src="irish.jpg" alt="Spiced Irish Coffee">
+                    <h4>Spiced Irish Coffee</h4>
+                    <p>$5.50</p>
+                </div>
+                <div class="col-4">
+                    <img src="americano.jpg" alt="Americano Coffee">
+                    <h4>Iced Americano</h4>
+                    <p>$5.00</p>
+                </div>
+                <div class="col-4">
+                    <img src="ice_latte.jpg" alt="Ice Latte">
+                    <h4>Ice Latte</h4>
+                    <p>$5.25</p>
+                </div>
+            </div>
+    </div>  
+
+<!----------------------Offer-------------------->
+<h2 class = "title">Offer</h2>
+    <div class="header">
+        <div class="offer">
+            <div class="second">
+                <div class="smallContainer">
+                    <div class="row">
+                        <div class="col-2-offer">
+                            <img src="discount.jpg">
+                        </div>
+                        <div class="col-2-offer">
+                            <h1>OFF 20%</h1>
+                            <p>Only at The Coffee Time. Discount 20% of all purchases.
+                            <br>Starting from 12/02/2022 to 01/20/2022
+                            </p>
+                            <a href="" class="butn">Use Now  &#10137;</a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>   
+    </div>
+
+<!---------------------------About---------------------->
+<h2 class = "title">About</h2>
+    <div class="headerAbout">
+        <p>
+            <small>The Coffee Time Shop was founded in 2022. Our team has 4 dedicated members
+            <br>Since then we have scoured Houston for the best coffee available anywhere
+            and we expertly roast our beans in small batches for optimal flavor.
+            <br>We purchase our beans direct from coffee farmers building on strong relationships 
+            to ensure we get the top 1% of the best arabica beans in the world. 
+            <br>So, we know where every coffee bean comes from. 
+            Now the same great coffee we use in our store locations are available in retail packages. 
+            <br><em>Buy coffee online here.</em></small>
+        </p>
+    </div>
+    
+<!----------------------Footer-------------------------->
+<div class="footer">
+    <img class="end" src="logo1.png" alt="The Coffee Time" width="150px">
+    <h4><b>The Coffee Time Shop</b></h4>
+</div>
+
+<!-----------------JS for MenuNav(put int seperate file later)------------>    
+<script>
+    var menuItem = document.getElementById("menuNav");
+    menuItem.style.maxHeight="0px";
+
+function menutoggle(){
+    if(menuItem.style.maxHeight == "0px")
+    {
+        menuItem.style.maxHeight = "200px";
+    }
+    else
+    {
+        menuItem.style.maxHeight = "0px";
+    }
+}
+</script>
+</body>
+
+</html>

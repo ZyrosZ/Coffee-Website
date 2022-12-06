@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>The Coffee Time Shop</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+    <div class="header">
+        <div class ="container"> <!--to make box-->
+
+            <div class = "navigateBar">
+                <a href="Coffee_Shop_Home.html">
+                    <img src="logo1.png" alt="The Coffee Time" width="160px"> 
+                </a>
+        
+                <!--The nav element defines a set of navigation links:-->
+                <nav>
+                    <!--Unorderes list of links-->
+                    <ul>
+                        <li><a href="Coffee_Shop_Home.html">Home</a></li>
+                        <li><a href="Coffee_Shop_Menu.html">Menu</a></li>
+                        <li><a href="Coffee_Shop_Contact.html">Contact</a></li>
+                        <li><a href="Coffee_Shop_Location.html">Location</a></li>
+                    </ul>
+                </nav>
+                <a class = "cart-icon" href="Coffee_Shop_Cart.html">
+                    <img src="cart.jpg" width="40px" height="40px"><span>0</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <h2 class = "title">Cart</h2>
+    
+    <div class="item-container">
+        <div class="item-header">
+            <h4 class ="item-name">Item Name</h4>
+            <h4 class ="price">Price</h4>
+            <h4 class ="quantity">Quantity</h4>
+            <h4 class ="total">Total</h4>
+        </div>
+        <div class="item"></div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="Cart.js"></script>
+</body>
+</html>

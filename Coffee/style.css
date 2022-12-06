@@ -10,6 +10,13 @@ body{
     display: flex;
     align-items: center;
     padding:10px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    height: 170px;
+    background-color: #28282B;
+    padding-left: 6%;
+    padding-right: 5%;
 }
 nav{
     flex:1;
@@ -28,6 +35,7 @@ a{ /* style for the links*/
     color: #fff;
     font-size: 16pt;
     font-weight: bold;
+    transition: 0.3s;
 }
 a:hover, a:active {font-size: 150%; color:#5C4033;}
 p{
@@ -41,6 +49,37 @@ p{
     padding-left: 25px;
     padding-right: 25px;
     
+}
+.menuIcon{
+    margin-left: 20px;
+    margin-top: -6px;
+    display: none;
+}
+@media only screen and (max-width: 800px) {
+    nav ul{
+        position: absolute;
+        top: 70px;
+        left:0;
+        background:rgb(65, 63, 63);
+        margin-top: 10%;
+        width: 100%;
+        transition: 0.5s;
+        overflow: hidden; /*With the hidden value, the overflow is clipped,
+         and the rest of the content is hidden:*/
+    }
+    nav ul li{
+        display: block;
+        margin-right: 50px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .menuIcon{
+        display: block;
+        cursor: pointer;
+    }
+    .logo{
+        width: 125px;
+    }
 }
 .row{
     display: flex;
@@ -69,6 +108,7 @@ p{
     padding: 8px 30px;
     margin: 30px 0;
     border-radius: 30px;
+    transition: 0.3s;
 }
 .butn:hover{
     background: #fff;
@@ -88,9 +128,9 @@ p{
     margin: 70px 0;
 }
 .col-3{
-    flex-basis: 30%;
+    flex-basis: 30%; /*to make three 3 columns*/
     min-width:250px;
-    margin-bottom: 250px;
+    margin-bottom: 25px;
 }
 .col-3 img{
     width: 100%;
@@ -99,5 +139,233 @@ p{
     max-width: 1300px;
     margin: auto;
     padding-left: 25px;
-    padding-right: 25px;;
+    padding-right: 25px;
+}
+.smallContainer_2{
+    max-width: 1700px;
+    display: flex;
+    margin: auto;
+}
+.second{
+    max-width: 1700px;
+    background-color: #5C4033;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.col-4{
+    flex-basis: 20%; /*to make 4 columns*/
+    padding: 10px;
+    min-width: 200px;
+    margin-bottom: 50px;
+    transition: 0.3s;
+}
+.col-4 img{
+    width: 100%;
+}
+.title{
+    text-align: center;
+    margin: 0 auto 30px;
+    position: relative;
+    line-height: 60px;
+    color: #5C4033;
+    font-size: 21pt;
+}
+.title::after{
+    content: '';
+    background: #28282B;
+    width: 80px;
+    height: 5px;
+    border-radius:5px;
+    position: absolute;
+    bottom:0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+h4{
+    color:#50382d;
+    font-weight: normal;
+    margin-top: 10px;
+}
+.col-4 p{
+    color: #28282B;
+    font-weight: normal;
+}
+
+.col-4:hover{
+    transform: translateY(-10px);
+}
+.offer{
+    max-width: 1700px;
+    margin:auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.second{
+    background-color: #5C4033;
+    padding: 10px 0px 10px 25px;
+}
+.col-2-offer{
+    flex-basis: 50%;
+    min-width: 300px;
+}
+.col-2-offer img{
+    max-width: 105%;
+    padding: 50px 50px 50px ;
+}
+.col-2-offer h1{
+    text-align: left;
+    color: white;
+    font-size: 50px;
+    line-height: 60px;
+    margin: 0 auto ;
+}
+.col-2-offer p{
+    text-align: left;
+}
+
+/*------------About--------------*/
+.headerAbout{
+    background-color: white;
+}
+.headerAbout p{
+    text-align: center;
+    margin: 0 auto 40px;
+    position: relative;
+    line-height: 40px;
+    color: #5C4033;
+    font-size: 15pt;
+}
+.footer{
+    padding: 10px;
+    width:100%;
+    height:150px;        
+    text-align: center;
+}
+.end{
+    cursor: pointer;
+    filter: grayscale(100%);
+}
+.end:hover{
+    filter: grayscale(0);
+}
+/*---------Request----------------*/
+.formC{
+    font-size: 20px;
+    color: #EADDCA;
+}
+.request{
+    background-color: #5C4033;
+    max-width: 1700px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 50px;
+    text-align: center;
+    border-radius: 15px;
+}
+.request form{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    text-align: left;
+}
+.request h3{
+    font-size: 24px;
+    color: #fff;
+}
+/*------------Contact------------*/
+.members .col-4{
+    text-align: center;
+    padding: 40px, 20px;
+    box-shadow: 0 0 10px 0px rgb(243, 238, 238);
+    cursor: pointer;
+    border-radius: 10%;
+}
+/*------------Menu---------------*/
+.col-4-menu{
+    flex-basis: 20%;
+    min-width: 300px;
+    line-break: auto;
+    margin-top: 50px;
+
+}
+.col-4-menu img{
+    width: 100%;
+    border-radius: 60%;
+}
+.col-4-menu a:hover, a:active{
+   color: #EADDCA;
+}
+
+/*------------Cart---------------*/
+.item-container{
+    max-width: 1000px;
+    justify-content: space-around;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.item-container ion-icon{
+    font-size: 25px;
+    color:rgb(153, 120, 120);
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.item-header{
+    width:100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 auto;
+}
+.item-name{
+    width: 45%;
+}
+.price{
+    width: 15%;
+    display: flex;
+    align-items: center;
+}
+.total{
+    width: 10%;
+    display: flex;
+    align-items: center;
+}
+.quantity{
+    width: 30%;
+    display: flex;
+    align-items: center;
+}
+.item{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid lightgray;
+}
+.item img{
+    width: 80%;
+    border-radius: 60%;
+}
+/*------------Location------------*/
+.location p{
+    line-height: 50px;
+    font-size: 15pt;
+    margin-top: 20px;
+}
+.location h2{
+    color: #EADDCA;
+    font-weight: bold;
+    font-size: 20pt;
+}
+.location{
+    max-width: 1700px;
+    margin:auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.location .col-2{
+    display: flex;
 }

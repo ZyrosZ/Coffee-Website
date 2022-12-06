@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>The Coffee Time Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class ="container"> <!--to make box-->
+
+            <div class = "navigateBar">
+                <a href="Coffee_Shop_Home.html">
+                    <img src="logo1.png" alt="The Coffee Time" width="160px"> 
+                </a>
+        
+                <!--The nav element defines a set of navigation links:-->
+                <nav>
+                    <!--Unorderes list of links-->
+                    <ul>
+                        <li><a href="Coffee_Shop_Home.html">Home</a></li>
+                        <li><a href="Coffee_Shop_Menu.html">Menu</a></li>
+                        <li><a href="Coffee_Shop_Contact.html">Contact</a></li>
+                        <li><a href="Coffee_Shop_Location.html">Location</a></li>
+                    </ul>
+                </nav>
+                <a href="Coffee_Shop_Cart.html">
+                    <img src="cart.jpg" width="40px" height="40px">
+                </a>
+            </div>
+        </div>
+    </div>
+
+<!-------------------Customer Request------------->
+    <h2 class="title">Request</h2>  
+    <div class="request">
+        <h3>Fill in the form</h3>
+        
+        <form method = "post" action = "http://www.deitel.com">
+
+            <input type = "hidden" name = "recipient"
+               value = "deitel@deitel.com">
+            <input type = "hidden" name = "subject" 
+               value = "Feedback Form">
+            <input type = "hidden" name = "redirect" 
+               value = "main.html"> 
+            
+            <table border="0">
+                <tbody>
+                    <tr>
+                        <td><label class="formC">Name</label></td>        
+                        <td><input type="text" name="name"></td>
+                    </tr>
+                    <tr>
+                        <td><label class="formC">Email Address:</label></td>
+                        <td><input id = "email" type = "email" required></td>
+                    </tr>
+                    <tr>
+                        <td><label class="formC">Phone Number</label></td>
+                        <td><input name = "phone" type = "phone"></td>
+                    </tr>
+                    <tr>
+                        <td><label class="formC">Choose the topic:</label></td>
+                        <td><select name = "request">
+                            <option selected>Updates</option>
+                            <option>Product Complaint</option>
+                            <option>Service Complaint</option>
+                            <option>Price Complaint</option>
+                            <option>Website Complaint</option>
+                            <option>Others</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label class="formC">Type what you think:</label></td>
+                        <td><textarea name = "question"
+                            row = "15" cols = "36">Enter your concerns here.</textarea></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+          <p>Note: The Coffee Time Shop will email the answers for your concerns</p>
+   
+          <p>
+               <!-- input types "submit" and "reset" insert -->
+               <!-- buttons for submitting and clearing the -->
+               <!-- form's contents, respectively -->
+           <input type = "submit" value = "Submit">
+           <input type = "reset" value = "Clear">
+          </p>
+       </form>
+    </div>
+   
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail()
+        {
+            Email.send({
+            Host : "smtp.gmail.com",
+            Username : "nguyenl190@gator.uhd.edu",
+            Password : "password",
+            To : 'nguyenl190@gator.uhd.edu',
+            From : document.getElementById("email").value,
+            Subject : "Customer Request form",
+            Body : "And this is the body"
+        }).then(
+        message => alert(message)
+);
+        }        
+    </script>
+<!-------------------Team Members----------------->
+    <div class="members">
+        <div class="smallContainer">
+            <h2 class = "title">Contact</h2>
+                <div class="row">
+                    <div class="col-4">
+                        <a href="Linh.html">
+                            <img src="girl.png" alt="Linh">
+                            <h4>Linh Nguyen</h4>
+                            <p>CTO of The Coffee Time Corpotation</p>
+                        </a>
+                    </div>
+                    <div class="col-4">
+                        <a href="">
+                            <img src="man1.jpg" alt="Daniyal">
+                            <h4>Daniyal Nadir</h4>
+                            <p>President of The Coffee Time Corpotation</p>
+                        </a>
+                    </div>
+                    <div class="col-4">
+                        <a href="Rafeal.html">
+                            <img src="man2.png" alt="Rafael">
+                            <h4>Rafael Najera</h4>
+                            <p>COO of The Coffee Time Corpotation</p>
+                        </a>
+                    </div>
+                    <div class="col-4">
+                        <a href="">
+                            <img src="man3.png" alt="Tien">
+                            <h4>Tien Nguyen</h4>
+                            <p>CEO of The Coffee Time Corpotation</p>
+                        </a>
+                    </div>
+                </div>
+        </div>  
+    </div>
+
+    
+</body>
